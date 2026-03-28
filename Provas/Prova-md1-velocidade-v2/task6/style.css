@@ -1,0 +1,125 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  min-height: 100vh;
+  background: #0b0b10;
+  color: #e8e8f0;
+  font-family: sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-wrap { width: min(480px, 94vw); }
+
+.header { margin-bottom: 2rem; }
+
+.badge {
+  display: inline-block;
+  background: rgba(124,92,252,.12);
+  border: 1px solid rgba(124,92,252,.3);
+  color: #a78bfa;
+  font-size: .75rem;
+  padding: 5px 12px;
+  border-radius: 100px;
+  margin-bottom: 1rem;
+}
+
+h1 { font-size: 2rem; }
+
+h1 span { color: #7c5cfc; }
+
+.subtitle { color: #555570; font-size: .85rem; margin-top: .5rem; }
+
+.formulario {
+  background: #13131d;
+  border: 1px solid #1e1e2e;
+  border-radius: 20px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.field { display: flex; flex-direction: column; gap: .45rem; }
+
+label { font-size: .75rem; color: #555570; text-transform: uppercase; }
+
+.input-wrap { position: relative; }
+
+input {
+  width: 100%;
+  background: #0d0d14;
+  border: 1px solid #1e1e2e;
+  border-radius: 14px;
+  font-size: .9rem;
+  color: #e8e8f0;
+  padding: .8rem 2.8rem .8rem 1rem;
+  outline: none;
+}
+
+input:focus { border-color: #7c5cfc; }
+
+input.valid   { border-color: #3de89a; }
+input.invalid { border-color: #ff4d6d; }
+
+.toggle-pw {
+  position: absolute;
+  right: .8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #555570;
+}
+
+.rules {
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+  padding: .9rem 1rem;
+  border: 1px solid #1e1e2e;
+  border-radius: 14px;
+}
+
+.rule { display: flex; align-items: center; gap: .55rem; font-size: .78rem; color: #555570; }
+
+.rule.ok { color: #3de89a; }
+
+.field-msg { font-size: .75rem; min-height: 1em; }
+.field-msg.success { color: #3de89a; }
+.field-msg.error   { color: #ff4d6d; }
+
+.btn-submit {
+  width: 100%;
+  padding: .9rem;
+  background: #7c5cfc;
+  border: none;
+  border-radius: 14px;
+  font-size: .95rem;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn-submit:hover { opacity: .9; }
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  color: #555570;
+  font-size: .75rem;
+}
+
+.divider::before, .divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #1e1e2e;
+}
+
+.login-link { text-align: center; font-size: .8rem; color: #555570; }
+.login-link a { color: #a78bfa; text-decoration: none; }

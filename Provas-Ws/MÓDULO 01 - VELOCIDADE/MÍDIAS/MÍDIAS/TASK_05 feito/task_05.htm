@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<style>
+#image {
+  height: 256px;
+  width: 256px;
+  background: url('person.png') 0px 0px;
+  position: absolute;
+}
+.animated {
+	animation: animate 0.5s ease-in-out infinite;
+}
+
+@keyframes animate {
+	0% {
+		top: 0px;
+	}
+	50% {
+		top: 20px;
+	}
+	100% {
+		top: 0px;
+	}
+}
+</style>
+<body>
+	<div id="demo">
+  		<p id="image" onmouseenter="animateScript()" onmouseleave="animateStop()"></p>
+	</div>
+
+<script>
+	let animateInterval;
+function animateScript() {
+	const img = document.getElementById("image")
+	document.getElementById("image").classList.add("animated")
+	animateInterval = setInterval(() => {
+		const actualLeft = parseInt(window.getComputedStyle(img).left, 10)
+		document.getElementById("image").style.left = `${actualLeft + 5}px`
+	}, 500); 
+}
+function animateStop() {
+	document.getElementById("image").classList.remove("animated")
+	clearInterval(animateInterval)
+}
+</script>
+
+</body>
+</html>

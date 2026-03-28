@@ -1,0 +1,652 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./ASSETS/Fonts/Montserrat/Montserrat-Italic-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Fugaz One';
+  src: url('./ASSETS/Fonts/Fugaz_One/FugazOne-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'ABeeZee';
+  src: url('./ASSETS/Fonts/ABeeZee/ABeeZee-Regular.ttf') format('truetype');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ABeeZee';
+  src: url('./ASSETS/Fonts/ABeeZee/ABeeZee-Italic.ttf') format('truetype');
+  font-style: italic;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #13141a;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  display: block;
+  unicode-bidi: isolate;
+}
+
+header {
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  top: 0;
+  z-index: 9;
+  background: #13141A;
+}
+
+/*vcabeçalho*/
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px;
+}
+
+.logo {
+  height: 70px;
+  font-family: 'Fugaz One';
+  margin-left: 150px;
+}
+
+#menu {
+  display: none;
+}
+
+.menuX {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  cursor: pointer;
+  margin-left: 900px;
+  margin-top: 20px;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  margin-right: 200px;
+  width: 70px;
+  border: 1.5px solid #ffff;
+  transition: 0.3s;
+  z-index: 1001;
+
+}
+
+#menu:checked~.cabecalho .menuX .bar1 {
+  transform: rotate(-45deg) translate(-19px, 19px);
+}
+
+#menu:checked+.cabecalho .menuX .bar2 {
+  opacity: 0;
+}
+
+#menu:checked~.cabecalho .menuX .bar3 {
+  transform: rotate(45deg) translate(-6px, -6px);
+}
+
+.dividir {
+  border: 2px solid #ffff;
+  width: 100vw;
+}
+
+/*criando sid bar*/
+.sidBar {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  height: 100vh;
+  right: 0;
+  width: 30vw;
+  background: #13141a;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 999;
+  text-align: center;
+  gap: 40px;
+}
+
+a {
+  color: #ffff;
+  cursor: pointer;
+  text-decoration: none;
+  margin-right: 100px;
+}
+
+a:hover {
+  font-style: italic;
+}
+
+#menu:checked~.sidBar {
+  transform: translateX(30%);
+}
+
+.vertical {
+  border: 2px solid #ffff;
+  width: 1;
+  width: 200vw;
+  transform: rotate(90deg);
+  margin-right: 30vw;
+}
+
+main {
+  margin-top: 140px;
+  height: auto;
+  width: 100%;
+  color: #ffff;
+}
+
+.conteiner {
+  margin-left: 20%;
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+}
+
+/*features*/
+
+.horizontal {
+  width: 55vw;
+  height: 3px;
+  background: linear-gradient(to right, #ffff, #13141A);
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+#features input {
+  display: none;
+}
+
+.radio-features {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  gap: 15px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  margin: 0px;
+}
+
+.radio-features label {
+  margin-top: 30px;
+  background-color: #13141A;
+  width: 100px;
+  height: 20px;
+  padding: 5px;
+  text-align: center;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+label[for="jogos"] {
+  color: #fda543;
+  border: 2px solid #fda543;
+}
+
+label[for="rankings"] {
+  color: #17c69b;
+  border: 2px solid #17c69b;
+}
+
+label[for="perfil"] {
+  color: #fb3640;
+  border: 2px solid #fb3640;
+}
+
+label[for="versoes"] {
+  color: #fa2f75;
+  border: 2px solid #fa2f75;
+}
+
+.radio-features label:hover {
+  font-size: 20px;
+}
+
+.conteudos {
+  position: relative;
+  width: 100%;
+}
+
+.conteudo {
+  display: none;
+  width: 55vw;
+  height: 350px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+  overflow: hidden;
+  box-sizing: border-box;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+  /* remove espaçamentos extras */
+}
+
+.img-text {
+  display: flex;
+}
+
+.feature-image {
+  width: 360px;
+  height: 360px;
+  top: 0;
+  padding: 0;
+  margin: 0;
+  object-fit: cover;
+  border-radius: 15px;
+  animation: entradaImg 0.8s ease forwards;
+}
+
+@keyframes entradaImg {
+  from {
+    opacity: 0.5;
+    transform: translateX(80px);
+  }
+
+  to {
+    opacity: 3;
+    transform: translateX(0);
+  }
+}
+
+#jogos:checked~.conteudos #conteudo-jogos,
+#rankings:checked~.conteudos #conteudo-rankings,
+#perfil:checked~.conteudos #conteudo-perfil,
+#versoes:checked~.conteudos #conteudo-versoes {
+  display: flex;
+  color: #13141A;
+}
+
+#jogos:checked~.conteudos #conteudo-jogos,
+#jogos:checked~.radio-features label[for="jogos"] {
+  background: #fda543;
+  color: #13141A;
+}
+
+#rankings:checked~.conteudos #conteudo-rankings,
+#rankings:checked~.radio-features label[for="rankings"] {
+  background: #17c69b;
+  color: #13141A;
+}
+
+#perfil:checked~.conteudos #conteudo-perfil,
+#perfil:checked~.radio-features label[for="perfil"] {
+  background: #fb3640;
+  color: #13141A;
+}
+
+#versoes:checked~.conteudos #conteudo-versoes,
+#versoes:checked~.radio-features label[for="versoes"] {
+  background: #fa2f75;
+  color: #13141A;
+}
+
+.conteudo p {
+  text-align: justify;
+}
+
+/*sobre a empresa agr*/
+
+
+.borde-empresa {
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background-color: #13141A;
+  display: flex;
+  width: 370px;
+  height: 150px;
+  border-radius: 25px;
+  margin-top: 20px;
+}
+
+.borde-empresa::before,
+.borde-empresa::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  border-radius: 35px;
+  width: calc(100% + 15px);
+  height: calc(100% + 15px);
+  background: repeating-linear-gradient(120deg, #fb3640, #fb3640 5%, #17c69b 10%, #17c69b 20%, #fa2f75 20%, #fa2f75 30%, #fda543 30%, #fda543 40%);
+  background-size: 300% 300%;
+  animation: animarBorda 5s linear normal infinite;
+}
+
+
+@keyframes animarBorda {
+  0% {
+    background-position: 100% 50%;
+    box-shadow: 0 0 10px 1px rgba(255, 255, 255, 0.7);
+  }
+
+  50% {
+    box-shadow: none;
+  }
+
+  100% {
+    background-position: 0% 50%;
+    box-shadow: 0 0 10px 1px rgba(252, 254, 255, 0.7);
+  }
+}
+
+.flex-layout {
+  display: flex;
+  gap: 40px;
+  /* Cria um espaço entre a borda da imagem e o texto */
+  margin-top: 20px;
+}
+
+.texto-sobre {
+  width: 470px;
+  padding-right: 6%;
+  text-align: justify;
+  font-size: 1.2em;
+  font-family: Biryani-regular;
+  font-size: 22px;
+}
+
+/*AQUI COMEÇA O JOGOS*/
+
+.conteiner-img-jogos {
+  text-align: center;
+}
+
+.irmao {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.img_jogos {
+
+  position: relative;
+  width: 450px;
+  height: 350px;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.conteiner-img-jogos p {
+  color: black;
+  text-align: justify;
+  padding-right: 20px;
+}
+
+.cont-jogo {
+  padding-left: 30px;
+  position: absolute;
+  inset: 0;
+  background-color: #fda543;
+  margin-top: 280px;
+  transition: 0.5s;
+  color: #13141A;
+}
+
+.cont-jogo:hover {
+  margin-top: 85px;
+}
+
+#DemoGame {
+  background-image: url(ASSETS/Jogos/DemoGame.jpg);
+}
+
+#DemoGame2 {
+  background-image: url(ASSETS/Jogos/DemoGame2.jpg);
+}
+
+#DemoGameRemastered {
+  background-image: url(ASSETS/Jogos/DemoGameRemastered.jpg);
+}
+
+#DemoGameFinale {
+  background-image: url(ASSETS/Jogos/DemoGameFinale.jpg);
+}
+
+button {
+  background-color: #13141A;
+  color: #ffff;
+  border: 2px solid #fda543;
+  border-radius: 15px;
+  width: 140px;
+  height: 60px;
+  margin-right: 450px;
+  font-size: 20px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.2);
+  background-color: #fda543;
+  color: #13141A;
+}
+
+
+/*aqui comewça os rankings*/
+.image-profile-pri {
+  border-color: #13141A;
+  height: 160px;
+  width: 160px;
+}
+
+.image-profile {
+  border-color: #13141A;
+  height: 80px;
+  width: 80px;
+}
+
+.table-ranking {
+  background-color: #17c69b;
+  border-radius: 30px;
+  width: 70vw;
+}
+
+thead th {
+  padding: 10px;
+  font-size: 20px;
+}
+
+.conteudo-table {
+  justify-content: center;
+  text-align: center;
+}
+
+.name {
+  margin-left: 30px;
+  margin-top: 32px;
+}
+
+#pos {
+  font-size: 25px;
+  color: #17c69b;
+}
+
+th {
+  color: #13141A;
+}
+
+.cabecalho-table {
+  width: 8vw;
+}
+
+tbody tr {
+  background-color: #13141A;
+  color: white;
+}
+
+.jogador {
+  display: flex;
+}
+
+.jogador img {
+  background-color: #ffff;
+}
+
+.tab-ranking {
+  display: none;
+  /*para esconder a bolinha do radio*/
+}
+
+/* Quando a linha (tr) TIVER um input marcado dentro dela... */
+tr:has(.tab-ranking:checked) {
+  background-color: #17c69b;
+  /* Cor de fundo verde */
+  color: #13141A;
+  /* Cor do texto escura */
+}
+
+/* Ajuste para o texto do número da posição mudar de cor também */
+tr:has(.tab-rankingb :checked) #pos {
+  color: #13141A;
+}
+
+td {
+  border: 2px solid #13141A;
+}
+
+/* Estilo para o label cobrir a linha toda e permitir o clique */
+.linha-ranking {
+  position: relative;
+}
+
+.click-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+/*perfil*/
+.perfil {
+  display: flex;
+  border: 2px solid #fb3640;
+  border-radius: 30px;
+  margin: 0;
+  width: 800px;
+  height: 350px;
+  padding: 20px;
+  text-align: center;
+}
+.info-jogador{
+  margin-right: 30px;
+}
+.person { 
+  display: flex; 
+  align-items: center; 
+  gap: 12px; 
+} 
+.nick { 
+  color: #fb3640; 
+  font-weight: 700;
+ } 
+.pontos { 
+  color: #aaa; 
+  font-size: .85rem; 
+}
+.player {
+  border-radius: 50%;
+  height: 120px;
+  padding: 20px;
+  margin-top: 10px;
+  margin-top: 0px;
+}
+.linha {
+    display: block;
+    background-color: #ffffff;
+    font-size: 1px;
+}
+.chart{
+  display: flex;
+  flex-direction: column;
+  margin-left: 40px;
+}
+.grafico{
+  background: conic-gradient( #17c69b 0% 50%, #fda543 50% 78%, #fa2f75 78% 100% );
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  animation: rodar 10s infinite linear;
+}
+.info-grafic{
+  display: flex;
+}
+
+.efeito{
+  display: flex;
+  gap: 10px;
+
+}
+.legend {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.legend h4 {
+  display: flex;
+  align-items: center;
+  font-size: .85rem;
+  font-weight: normal;
+}
+
+.legend h4::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 25%;
+  flex-shrink: 0;
+}
+
+.legend h4:nth-child(1)::before { background: #17c69b; }
+.legend h4:nth-child(2)::before { background: #fda543; }
+.legend h4:nth-child(3)::before { background: #fa2f75; }
+@keyframes rodar {
+  0%{
+    transform: rotate(0);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+.efeito span{
+  border: 1px solid #fb3640 ;
+  animation: animar 3s infinite ease-in-out alternate;
+}
+.efeito span:nth-child(1) {  animation-delay: 0s;    }
+.efeito span:nth-child(2) {  animation-delay: 0.15s;  }
+.efeito span:nth-child(3) {  animation-delay: 0.30s;  }
+.efeito span:nth-child(4) {  animation-delay: 0.45s;  }
+.efeito span:nth-child(5) {  animation-delay: 0.60s;  }
+.efeito span:nth-child(6) {  animation-delay: 0.75s;  }
+.efeito span:nth-child(7) {  animation-delay: 0.90s;  }
+.efeito span:nth-child(8) {  animation-delay: 1.05s; }
+
+@keyframes animar {
+  0%{
+    transform: scaleY(0.08);
+  }
+  100%{
+    transform: scaleY(0.6);
+  }
+}

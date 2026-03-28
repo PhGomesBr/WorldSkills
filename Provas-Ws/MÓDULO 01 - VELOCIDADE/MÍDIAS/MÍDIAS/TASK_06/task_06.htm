@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>TASK 06</title>
+	<style>
+		#feedback {
+			text-align: center;
+			padding: 10px;
+			background-color: blue;
+			color: white;
+			margin: 10px;
+		}
+		.hidden {
+			display: none;
+		}
+	</style>
+</head>
+
+<body>
+
+	<h1>TASK 06</h1>
+	<p>Form Validation</p>
+	<div id="feedback">Feedback Messages</div>
+	<form target="#" onsubmit="handleSubmit(e)">
+		<label for="email">E-mail:</label><input required type="text" name="email" id="email">
+		<label for="password">Password:</label><input required type="password" name="password" id="password">
+		<label for="passwordConfirmation">Password Confirmation:</label><input required type="password"
+			name="passwordConfirmation" id="passwordConfirmation">
+		<button type="submit">Save</button>
+		<ul>
+			<li id="confirm-password">Password and Password confirmation have the same content</li>
+			<li id="minimum-8">A minimum of 8 characters</li>
+			<li id="lower-case">Has at least one lower case character</li>
+			<li id="upper-case">Has at least one upper case character</li>
+			<li id="need-number">Has at least one number</li>
+		</ul>
+	</form>
+	<script type="text/javascript" language="javascript" src="task_06.js"></script>
+
+</body>
+
+</html>

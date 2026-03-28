@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .point {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: .1s all;
+        }
+
+        .point:nth-child(1) {
+            animation: animation1 3s ease-in-out infinite;
+        }
+
+        .point:nth-child(2) {
+            animation: animation1 3s ease-in-out infinite .5s;
+        }
+
+        .point:nth-child(3) {
+            animation: animation1 3s ease-in-out infinite 1s;
+        }
+
+        .point:nth-child(4) {
+            animation: animation1 3s ease-in-out infinite 1.5s;
+        }
+
+        .loader {
+            width: 20px;
+            height: 20px;
+            position: relative;
+        }
+
+        @keyframes animation1 {
+            15% {
+                left: 100%;
+                top: 0;
+            }
+
+            25% {
+                left: 100%;
+                top: 100%;
+            }
+
+            50% {
+                left: 0;
+                top: 100%;
+            }
+
+            100% {
+                left: 0;
+                top: 0;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loader">
+        <div class="point1 point" style="background-color: #19A68C;"></div>
+        <div class="point2 point" style="background-color: #F63D3A;"></div>
+        <div class="point3 point" style="background-color: #FDA543;"></div>
+        <div class="point4 point" style="background-color: #193B48;"></div>
+    </div>
+</body>
+
+</html>

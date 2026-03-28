@@ -1,0 +1,246 @@
+/* ConsultaApp.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: gray;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+
+    background-clip: text;
+}
+
+/* FORMULÁRIO */
+form {
+    display: flex;
+    padding: 10px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 15px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+input,
+select {
+    padding: 15px 20px;
+    border: 2px solid #e1e5e9;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    transform: translateY(-2px);
+}
+
+input::placeholder {
+    color: #999;
+}
+
+button[type="submit"] {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+button[type="submit"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+/* LISTA */
+ul {
+    list-style: none;
+}
+
+li {
+    background: white;
+    margin-bottom: 15px;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    border-left: 5px solid #667eea;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+li strong {
+    color: #333;
+    font-size: 1.3rem;
+    display: block;
+    margin-bottom: 8px;
+}
+
+li>div {
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+li span {
+    background: #f8f9fa;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-right: 10px;
+}
+
+/* STATUS COLORS */
+.status-agendada {
+    color: #28a745;
+    background: #d4edda;
+}
+
+.status-concluída {
+    color: #007bff;
+    background: #cce7ff;
+}
+
+.status-cancelada {
+    color: #dc3545;
+    background: #f8d7da;
+}
+
+/* BOTÕES DA LISTA */
+li button {
+    padding: 8px 16px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-concluir {
+    background: #28a745;
+    color: white;
+}
+
+.btn-concluir:hover {
+    background: #218838;
+    transform: translateY(-2px);
+}
+
+.btn-deletar {
+    background: #dc3545;
+    color: white;
+}
+
+.btn-deletar:hover {
+    background: #c82333;
+    transform: translateY(-2px);
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    form {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    li {
+        padding: 20px;
+    }
+
+    li strong {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    li button {
+        display: block;
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+/* ANIMAÇÕES */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+li {
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+li:nth-child(even) {
+    animation-delay: 0.1s;
+}
+
+li:nth-child(3n) {
+    animation-delay: 0.2s;
+}

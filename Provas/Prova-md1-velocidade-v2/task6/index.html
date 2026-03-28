@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Task 6</title>
+</head>
+
+<body>
+  <div class="card-wrap">
+ 
+    <header class="header">
+      <div class="badge">Nova conta</div>
+      <h1>Configure sua<br><span>conta agora</span></h1>
+      <p class="subtitle">Preencha os campos abaixo para criar seu acesso.</p>
+    </header>
+ 
+    <div class="formulario">
+ 
+      <div class="field">
+        <label for="email">Endereço de e-mail</label>
+        <div class="input-wrap">
+          <input type="email" id="email" placeholder="voce@exemplo.com" autocomplete="email">
+        </div>
+      </div>
+ 
+      <div class="field">
+        <label for="password">Senha</label>
+        <div class="input-wrap">
+          <input type="password" id="password" placeholder="Digite sua senha" autocomplete="new-password">
+          <button class="toggle-pw" type="button" onclick="toggleVis('password', this)" title="Mostrar/ocultar">👁</button>
+        </div>
+      </div>
+ 
+      <div class="rules" id="rules">
+        <div class="rule" id="r-len"><span class="icon">○</span> Mínimo de 8 caracteres</div>
+        <div class="rule" id="r-low"><span class="icon">○</span> Pelo menos uma letra minúscula</div>
+        <div class="rule" id="r-up"> <span class="icon">○</span> Pelo menos uma letra maiúscula</div>
+        <div class="rule" id="r-num"><span class="icon">○</span> Pelo menos um número</div>
+      </div>
+ 
+      <div class="field-msg" id="pw-msg"></div>
+ 
+      <div class="field">
+        <label for="confirmar">Confirmar senha</label>
+        <div class="input-wrap">
+          <input type="password" id="confirmar" placeholder="Confirme sua senha" autocomplete="new-password">
+          <button class="toggle-pw" type="button" onclick="toggleVis('confirmar', this)" title="Mostrar/ocultar">👁</button>
+        </div>
+        <div class="field-msg" id="confirm-msg"></div>
+      </div>
+ 
+      <button class="btn-submit" type="button" onclick="handleSubmit()">Criar conta</button>
+ 
+      <div class="divider">ou</div>
+ 
+      <p class="login-link">Já tem uma conta? <a href="#">Entrar</a></p>
+ 
+    </div>
+  </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

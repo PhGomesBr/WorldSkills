@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+#root {
+  width: 100%;
+  max-width: 600px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 24px;
+  font-size: 28px;
+}
+
+/* Formulário */
+.formulario {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.formulario input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.formulario input:focus {
+  border-color: #6c63ff;
+}
+
+.formulario button {
+  padding: 12px 20px;
+  background-color: #6c63ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.formulario button:hover {
+  background-color: #574fd6;
+}
+
+/* Lista */
+.lista {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lista li {
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.lista span {
+  flex: 1;
+  font-size: 16px;
+  color: #333;
+}
+
+.lista .btn-concluir {
+  padding: 8px 12px;
+  background-color: #22c55e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background 0.2s;
+}
+
+.lista .btn-concluir:hover {
+  background-color: #16a34a;
+}
+
+.lista .btn-deletar {
+  padding: 8px 12px;
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background 0.2s;
+}
+
+.lista .btn-deletar:hover {
+  background-color: #dc2626;
+}
