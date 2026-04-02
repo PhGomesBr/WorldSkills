@@ -1,0 +1,434 @@
+@font-face {
+  font-family: 'monstserat';
+  src: url(ASSETS/Fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
+}
+
+:root {
+  /*Seta as cores padrão da página*/
+  --escuro: #13141A;
+  --rosa: #FA2F75;
+  --vermelho: #FB3640;
+  --laranja: #FDA543;
+  --verde: #17C69B;
+}
+
+* {
+  scroll-margin-top: 15 0px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+p {
+  font-family: 'monstserat';
+}
+
+body {
+  background-color: var(--escuro);
+  color: white
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--escuro);
+}
+
+.cabecalho {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+
+}
+
+#menu {
+  display: none;
+}
+
+.logo {
+  height: 90px;
+  padding: 10px;
+  margin-left: 270px;
+}
+
+.linha {
+  border: 3px solid white
+}
+
+.menuX {
+  gap: 40px;
+  margin-right: 250px;
+  margin-top: 15px;
+  z-index: 200;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  border: 2px solid white;
+  width: 70px;
+  margin: 20px;
+  transition: 0.2s linear;
+  z-index: 999;
+  background-color: #fff;
+}
+
+#menu:checked~.cabecalho .menuX .bar1 {
+  transform: rotate(45deg) translate(22px, 22px);
+}
+
+#menu:checked~.cabecalho .menuX .bar2 {
+  opacity: 0;
+}
+
+#menu:checked~.cabecalho .menuX .bar3 {
+  transform: rotate(-45deg) translate(11px, -11px);
+}
+
+/* ─── SIDEBAR ─── */
+.sidBar {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  background-color: var(--escuro);
+  transition: .3s ease;
+  right: -500px;
+  width: 400px;
+  height: 100vh;
+  top: 0;
+  border-left: 2px solid white;
+  z-index: 100;
+}
+
+#menu:checked~.sidBar {
+  right: 0px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  font-style: italic;
+}
+
+main {
+  align-items: center;
+  justify-content: center;
+  margin-left: 300px;
+}
+
+h1 {
+  font-family: 'monstserat';
+  font-size: 27px;
+}
+
+h2 {
+  font-size: 40px;
+  margin-top: 40px;
+  font-family: 'monstserat';
+  height: 70px;
+  width: 65vw;
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(to right, #fff, #13141A) 1;
+}
+
+#featurs-conteiner input {
+  display: none;
+}
+
+.featuresBtn {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.featuresBtn label {
+  display: flex;
+  background-color: #13141A;
+  border: 2px solid white;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  height: 25px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  width: 120px;
+  transition: .2s;
+}
+
+.featuresBtn label span {
+  font-family: 'monstserat';
+}
+
+.featuresBtn label:hover {
+  font-size: 20px;
+}
+
+label[for="jogos"] {
+  color: #fda543;
+  border-color: #fda543;
+}
+
+label[for="rankings"] {
+  color: #17c69b;
+  border-color: #17c69b;
+}
+
+label[for="perfil"] {
+  color: #fb3640;
+  border-color: #fb3640;
+}
+
+label[for="versoes"] {
+  color: #fa2f75;
+  border-color: #fa2f75;
+}
+
+#jogos:checked~.featuresBtn label[for="jogos"] {
+  background-color: #fda543;
+  color: #13141A;
+}
+
+#rankings:checked~.featuresBtn label[for="rankings"] {
+  background-color: #17c69b;
+  color: #13141A;
+}
+
+#perfil:checked~.featuresBtn label[for="perfil"] {
+  background-color: #fb3640;
+  color: #13141A;
+}
+
+#versoes:checked~.featuresBtn label[for="versoes"] {
+  background-color: #fa2f75;
+  color: #13141A;
+}
+
+.conteudos {
+  margin: 0;
+  display: flex;
+}
+
+.conteudo {
+  display: none;
+  grid-template-columns: 650px 450px;
+  color: var(--escuro);
+  border-end-start-radius: 20px;
+  border-start-end-radius: 20px;
+  border-end-end-radius: 20px;
+  align-items: center;
+  height: 410px;
+}
+
+.feature-image {
+  width: 410px;
+  height: 410px;
+  margin-right: 0;
+  padding: 0;
+  margin: 0;
+  object-fit: cover;
+  border-start-end-radius: 20px;
+  border-end-end-radius: 20px;
+  animation: entradaImg 0.8s ease forwards;
+  margin-left: 90px;
+}
+
+.conteudo p {
+  text-align: justify;
+  margin-right: -50px;
+}
+
+@keyframes entradaImg {
+  from {
+    opacity: 0.5;
+    transform: translateX(80px);
+  }
+
+  to {
+    opacity: 3;
+    transform: translateX(0);
+  }
+}
+
+.feature-text {
+  margin-left: 30px;
+  line-height: 1.6;
+}
+
+#jogos:checked~.conteudos #conteudo-jogos {
+  display: grid;
+}
+
+#rankings:checked~.conteudos #conteudo-rankings {
+  display: grid;
+}
+
+#perfil:checked~.conteudos #conteudo-perfil {
+  display: grid;
+}
+
+#versoes:checked~.conteudos #conteudo-versoes {
+  display: grid;
+}
+
+.pMidia {
+  display: flex;
+}
+
+.pMidia p {
+  margin-top: -5px;
+  margin-left: 90px;
+  width: 500px;
+  font-size: 18px;
+  ;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.borda {
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  display: inline-block;
+  padding: 3px;
+}
+
+.borda::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: -5px;
+  border-radius: 14px;
+  background: repeating-linear-gradient(120deg,
+      #fb3640, #fb3640 5%,
+      #17c69b 10%, #17c69b 20%,
+      #fa2f75 20%, #fa2f75 30%,
+      #fda543 30%, #fda543 40%,
+      #fb3640 41%
+      /* ← fecha o ciclo com a primeira cor */
+    );
+  background-size: 200% 200%;
+  animation: borda 5s linear infinite;
+}
+
+@keyframes borda {
+  0% {
+    background-position: 100% 50%;
+    box-shadow: 0 0 5px 1px #ffffffb8;
+  }
+
+  50% {
+    box-shadow: 0 0 10px 3px #ffffffb8;
+  }
+
+  100% {
+    background-position: 0% 50%;
+    box-shadow: 0 0 5px 1px #ffffffb8;
+  }
+}
+.midia {
+  background-color: var(--escuro);
+  width: 400px;
+  height: 150px;
+  border-radius: 10px;
+}
+
+#logo {
+  padding: 20px;
+  display: block;
+  /* ← remove espaço extra embaixo da img */
+  background-color: #13141A;
+  border-radius: 8px;
+  height: 100px;
+  width: 350px;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 500px 500px;
+  gap: 40px;
+  padding: 10px;
+}
+
+.card div {
+  width: 450px;
+  height: 400px;
+  overflow: hidden;
+}
+
+#jogo {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.jogo1 {
+  background-image: url(ASSETS/Jogos/DemoGame.jpg);
+}
+
+.texto {
+  background-color: var(--laranja);
+  margin-top: 330px;
+  font-family: 'monstserat';
+  font-size: 20px;
+  color: var(--escuro);
+  transition: .5s;
+}
+
+.texto h5 {
+  margin: 15px;
+  margin-top: 23px;
+  font-size: 20px;
+}
+
+.texto p {
+  padding: 10px;
+  font-size: 15px;
+  text-align: justify;
+}
+
+.jogo2 {
+  background-image: url(ASSETS/Jogos/DemoGame2.jpg);
+}
+
+.jogo3 {
+  background-image: url(ASSETS/Jogos/DemoGameRemastered.jpg);
+}
+
+.jogo4 {
+  background-image: url(ASSETS/Jogos/DemoGameFinale.jpg);
+}
+
+#jogo:hover .texto {
+  margin-top: 120px;
+}
+
+.btnVerMais {
+  height: 70px;
+  width: 150px;
+  background-color: var(--laranja);
+  color: var(--escuro);
+  border: 2px solid var(--laranja);
+  border-radius: 20px;
+  font-size: 18px;
+  margin: 20px;
+  margin-left: 420px;
+  transition: .5s;
+}
+
+.btnVerMais:hover {
+  transform: scale(1.2);
+  background-color: var(--escuro);
+  color: var(--laranja);
+}
